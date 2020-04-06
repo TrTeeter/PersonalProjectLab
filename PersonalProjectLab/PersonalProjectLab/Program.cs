@@ -13,7 +13,7 @@ namespace PersonalProjectLab
         {
 
 
-            string line;
+            string line = ("");
             SortedList<string,int> products = new SortedList<string,int>();
 
             Console.WriteLine("WELCOME TO T.A.P.C.");
@@ -31,11 +31,7 @@ namespace PersonalProjectLab
                   
                     while ((line = sr.ReadLine()) != null)
                     {
-                        // convert the
-                        (line) = SortedList<string,int> name;
-                        // add to list
-                        products.Add(name);
-                        
+                       SortedList<string,int> Convert(string, SortedList<string, int>);
                     }
 
 
@@ -46,7 +42,7 @@ namespace PersonalProjectLab
         
         //create a class that runs through the document and adds each object into a bank to search from that sorts them by name, then price then lists the source
         //If the price is better than replace with the lowest price
-        // ask the user for the name of the object/price/store they are searching for or the price or the store
+        //ask the user for the name of the product they are looking for
         //Using looping, Display the lowest price by running through the classes and if the price is equal or lower replace it as the display product
         //While doing this loop is happing, create an average price index to display for information about the product.
         //If the product isn’t shown redirect to the name of the product
