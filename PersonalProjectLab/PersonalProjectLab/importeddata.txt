@@ -2,12 +2,10 @@
 Apple, 5
 Apple, 7
 Apple, 2
-
 Bike, 40
 Bike, 120
 Bike, 90
 Bike, 75
-
 Tee_Shirt, 20
 Tee_Shirt, 10
 Tee_Shirt, 14
