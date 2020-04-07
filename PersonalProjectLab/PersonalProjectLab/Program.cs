@@ -23,7 +23,7 @@ namespace PersonalProjectLab
 
             Console.WriteLine("WELCOME TO T.A.P.C.");
             Console.WriteLine("'Totally Awesome Price Comparitor'");
-            Console.ReadLine();
+          
             //hard code an import list of items and prices
       
 
@@ -38,8 +38,6 @@ namespace PersonalProjectLab
                     {
                         string[] values = line.Split(',');
                         products.Add(new Tuple<string, int>(values[0], int.Parse(values[1])));
-
-                       
 
                     }
 
@@ -63,7 +61,10 @@ namespace PersonalProjectLab
             basic.importuserinput(productreq);
 
             int calcavg = basic.average();
+            int lowprice = basic.LowestPrice();
 
+            Console.WriteLine("The lowest Price for a " + productreq + " is $" + lowprice);
+            Console.WriteLine("The Average Price for a " + productreq + " is $" + calcavg);
 
 
             //Using looping, Display the lowest price by running through the classes and if the price is equal or lower replace it as the display product

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace SortingEngine
@@ -8,16 +9,17 @@ namespace SortingEngine
     public class SearchEngine
     {
         List<Tuple<string, int>> _products;
-        string _productreq;
-        
+        string _productreq = "";
+        int lowestprice = 100000000;
 
 
-        public void Importlist(List<Tuple<string,int>> products)
+        public ImportList(List<Tuple<string,int>> products)
         {
+
             products = _products;
         }
 
-        public void importuserinput(string productreq)
+       public importuserinput(string productreq)
         {
             productreq = _productreq;
         }
@@ -25,7 +27,7 @@ namespace SortingEngine
         {
 
 
-            int lowestprice = 100000000;
+            
             foreach (var productItem in _products)
             {
                 if (productItem.Item1 == _productreq)
