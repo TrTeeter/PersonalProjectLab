@@ -21,22 +21,24 @@ namespace SortingEngine
         {
             productreq = _productreq;
         }
-        private List<Tuple<string, int>> SearchResults()
+        public int LowestPrice()
         {
 
-            int sum = 0;
-            int numberofproducts = 0;
-            List<Tuple<string, int>> SearchResults;
 
+            int lowestprice = 100000000;
             foreach (var productItem in _products)
             {
                 if (productItem.Item1 == _productreq)
                 {
 
-                     SearchResults += productItem;
+                      if(productItem.Item2<lowestprice)
+                    { lowestprice = productItem.Item2;
+                    }
+                      
                     
                 }
             }
+            return lowestprice;
             
         }
        public int average()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SortingEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -55,14 +56,14 @@ namespace PersonalProjectLab
             Console.WriteLine("What Can I help you find today?");
             productreq= Console.ReadLine();
 
-            foreach (var productItem in products)
-            {
-                if (productItem.Item1 == productreq)
-                {
-                    Console.WriteLine(productreq + "= $" + productItem.Item2);
-                }
-            }
+
             //create class that selects object and best price
+            SearchEngine basic = new SearchEngine();
+            basic.Importlist(products);
+            basic.importuserinput(productreq);
+
+            int calcavg = basic.average();
+
 
 
             //Using looping, Display the lowest price by running through the classes and if the price is equal or lower replace it as the display product
