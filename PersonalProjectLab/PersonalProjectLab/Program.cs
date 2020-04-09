@@ -29,7 +29,7 @@ namespace PersonalProjectLab
 
             if (File.Exists("importeddata.txt"))
             {
-                Console.WriteLine("test");
+                
                 using (StreamReader sr = File.OpenText("importeddata.txt"))
                 {
                     
@@ -57,7 +57,7 @@ namespace PersonalProjectLab
 
             //create class that selects object and best price
             SearchEngine basic = new SearchEngine();
-            basic.Importlist(products);
+            basic.ImportList(products);
             basic.importuserinput(productreq);
 
             int calcavg = basic.average();

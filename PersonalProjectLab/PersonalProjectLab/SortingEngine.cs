@@ -13,15 +13,15 @@ namespace SortingEngine
         int lowestprice = 100000000;
 
 
-        public ImportList(List<Tuple<string,int>> products)
+        public void ImportList(List<Tuple<string,int>> products)
         {
 
-            products = _products;
+            _products= products;
         }
 
-       public importuserinput(string productreq)
+       public void importuserinput(string productreq)
         {
-            productreq = _productreq;
+            _productreq = productreq;
         }
         public int LowestPrice()
         {
