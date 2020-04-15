@@ -15,7 +15,6 @@ namespace SortingEngine
 
         public void ImportList(List<Tuple<string,int>> products)
         {
-
             _products= products;
         }
 
@@ -23,6 +22,29 @@ namespace SortingEngine
         {
             _productreq = productreq;
         }
+
+        public bool availability()
+        {
+            bool availability = true;
+            int numberofproducts = 0;
+
+            foreach (var productItem in _products)
+            {
+                if (productItem.Item1 == _productreq)
+                {
+
+                    numberofproducts++;
+                }
+            }
+            if(numberofproducts ==0)
+            {
+                availability = false;
+            }
+            return availability;
+                
+
+        }
+            
         public int LowestPrice()
         {
 

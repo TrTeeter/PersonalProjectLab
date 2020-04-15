@@ -18,6 +18,8 @@ namespace PersonalProjectLab
             string input = "";
             string productreq;
             bool repeat = true;
+            int calcavg = 0;
+            int lowprice = 0;
             List<Tuple<string, int>> products = new List<Tuple<string, int>>();
 
             Console.WriteLine("WELCOME TO T.A.P.C.");
@@ -61,11 +63,25 @@ namespace PersonalProjectLab
                 basic.ImportList(products);
                 basic.importuserinput(productreq);
 
-                int calcavg = basic.average();
-                int lowprice = basic.LowestPrice();
+                bool availabilty = basic.availability();
+                if(availabilty == true) 
+                {
+                    calcavg = basic.average();
+                    lowprice = basic.LowestPrice();
+                    
+                }
+                else
+                {
+                    Console.WriteLine("This Product is Not in Our Directory");
+                }
+                
 
                 Console.WriteLine("The lowest Price for a " + productreq + " is $" + lowprice);
                 Console.WriteLine("The Average Price for a " + productreq + " is $" + calcavg);
+
+                calcavg = 0;
+                lowprice = 0;
+
                 Console.WriteLine("Would You Like to Search for Another Item? yes or no?");
                 input = Console.ReadLine();
 
