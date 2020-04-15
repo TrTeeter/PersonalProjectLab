@@ -16,4 +16,10 @@
   <ItemGroup>
     <ProjectReference Include="..\PersonalProjectLab\PersonalProjectLab.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Testtxt.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

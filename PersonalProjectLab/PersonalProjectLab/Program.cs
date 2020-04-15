@@ -15,10 +15,9 @@ namespace PersonalProjectLab
 
 
             string line = ("");
-           
+            string input = "";
             string productreq;
-           
-
+            bool repeat = true;
             List<Tuple<string, int>> products = new List<Tuple<string, int>>();
 
             Console.WriteLine("WELCOME TO T.A.P.C.");
@@ -45,27 +44,35 @@ namespace PersonalProjectLab
                 }
 
             }
-            
+
 
             //create a class that runs through the document and adds each object into a bank to search from that sorts them by name, then price then lists the source
             //If the price is better than replace with the lowest price
             //ask the user for the name of the product they are looking for
+            
+            while (repeat)
+                {
+                Console.WriteLine("What Can I help you find today?");
+                productreq = Console.ReadLine();
 
-            Console.WriteLine("What Can I help you find today?");
-            productreq= Console.ReadLine();
 
+                //create class that selects object and best price
+                SearchEngine basic = new SearchEngine();
+                basic.ImportList(products);
+                basic.importuserinput(productreq);
 
-            //create class that selects object and best price
-            SearchEngine basic = new SearchEngine();
-            basic.ImportList(products);
-            basic.importuserinput(productreq);
+                int calcavg = basic.average();
+                int lowprice = basic.LowestPrice();
 
-            int calcavg = basic.average();
-            int lowprice = basic.LowestPrice();
+                Console.WriteLine("The lowest Price for a " + productreq + " is $" + lowprice);
+                Console.WriteLine("The Average Price for a " + productreq + " is $" + calcavg);
+                Console.WriteLine("Would You Like to Search for Another Item? yes or no?");
+                input = Console.ReadLine();
 
-            Console.WriteLine("The lowest Price for a " + productreq + " is $" + lowprice);
-            Console.WriteLine("The Average Price for a " + productreq + " is $" + calcavg);
-
+                if (input == "no")
+                { repeat = false; }
+            }
+            
 
             //Using looping, Display the lowest price by running through the classes and if the price is equal or lower replace it as the display product
             //While doing this loop is happing, create an average price index to display for information about the product.

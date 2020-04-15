@@ -1,0 +1,8 @@
+﻿testproduct1, 100
+testproduct1, 100
+testproduct1, 0
+testproduct1, 0 
+testproduct2, 1000
+testproduct2, 0
+testproduct2, 1000
+testproduct2, 0
